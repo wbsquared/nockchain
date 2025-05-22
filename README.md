@@ -64,7 +64,7 @@ nockchain-wallet keygen
 
 This will print a new public/private key pair + chain code to the console, as well as the seed phrase for the private key.
 
-Now, copy the public key to the `.env` file:
+Now, copy the public key to the `.env` file. This will cause your miner to default mine to your wallet unless you specify mining to a different pubkey:
 
 ```
 MINING_PUBKEY=<public-key>
@@ -88,7 +88,7 @@ nockchain-wallet import-keys --input keys.export
 
 ## Running Nodes
 
-To run a Nockchain miner:
+To run a Nockchain miner to your wallet as entered in the .env file above:
 
 ```
 make run-nockchain
@@ -101,7 +101,7 @@ To run a Nockchain node without mining:
 nockchain
 ```
 
-To run a Nockchain node and mine to a pubkey:
+To run a Nockchain node and mine to a pubkey other than the one in your .env file:
 
 ```
 nockchain --mining_pubkey <your_pubkey> --mine
